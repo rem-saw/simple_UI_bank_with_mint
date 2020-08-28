@@ -1,0 +1,50 @@
+<div
+  [perfectScrollbar]="{}"
+  class="height-100vh signup4-wrap"
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+>
+ 
+   <div fxFlex="70" fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card class="p-0">
+      <mat-card-title class="">
+          <div class="card-title-text">Card Number Verification</div>
+          <mat-divider></mat-divider>
+      </mat-card-title>
+      <mat-card-content>
+    <form  class="signup4-form grey-100"  [formGroup]="verifyForm">
+
+      <div class="pb-1">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Card Number</mat-label>
+            <input
+            matInput
+            type="number"
+            name="cardNumber"
+            formControlName="cardNumber"
+            placeholder="(Min digit: 4, Max digit : 9)"
+            value="">
+        </mat-form-field>
+        <small 
+        *ngIf="verifyForm.controls['cardNumber'].hasError('minlength') && verifyFormForm.controls['cardNumber'].touched" 
+        class="form-error-msg"> Card Number require at least {{verifyForm.controls['cardNumber'].errors.minlength.requiredLength}} characters </small>
+        <small 
+        *ngIf="verifyForm.controls['cardNumber'].hasError('maxlength') && verifyForm.controls['cardNumber'].touched" 
+        class="form-error-msg"> Card Number can not contain more than {{verifyFormForm.controls['cardNumber'].errors.maxlength.requiredLength}} characters </small>
+    </div>
+
+      <div fxLayout="row wrap" fxLayoutAlign="start center" 
+	         style="margin-top: 20px;">
+      </div>
+
+      <button 
+      mat-raised-button 
+      color="primary" 
+      [disabled]="verifyForm.invalid"  (click)="onSubmit()">Submit</button>
+
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </div>
+</div>
+
