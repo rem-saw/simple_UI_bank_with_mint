@@ -1,7 +1,7 @@
 {
-  "name": "egret",
+  "name": "Simple UI for Bank with Mint Endpoint",
   "version": "8.0.0",
-  "license": "https://themeforest.net/licenses/terms/regular",
+  "license": "Samuel Sawyerr",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
